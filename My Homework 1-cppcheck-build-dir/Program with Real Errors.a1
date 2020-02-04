@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="1743944218">
+        <error id="AssignmentAddressToInteger" severity="portability" msg="Assigning a pointer to an integer is not portable." verbose="Assigning a pointer to an integer (int/long/etc) is not portable across different platforms and compilers. For example in 32-bit Windows and linux they are same width, but in 64-bit Windows and linux they are of different width. In worst case you end up assigning 64-bit address to 32-bit integer. The safe way is to store addresses only in pointer types (or typedefs like uintptr_t)." cwe="758">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="9" column="9"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;my_favorite_number&gt;7&apos; is always false" verbose="Condition &apos;my_favorite_number&gt;7&apos; is always false" cwe="570">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="16" column="28" info="Condition &apos;my_favorite_number&gt;7&apos; is always false"/>
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="3" column="30" info="Assignment &apos;my_favorite_number=5&apos;, assigned value is 5"/>
+        </error>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: p" verbose="Null pointer dereference: p" cwe="476">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="9" column="19" info="Null pointer dereference"/>
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="6" column="24" info="Assignment &apos;p=0&apos;, assigned value is 0"/>
+            <symbol>p</symbol>
+        </error>
+        <error id="nullPointer" severity="warning" msg="Possible null pointer dereference: p" verbose="Possible null pointer dereference: p" cwe="476">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="12" column="10" info="Null pointer dereference"/>
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="6" column="24" info="Assignment &apos;p=0&apos;, assigned value is 0"/>
+            <symbol>p</symbol>
+        </error>
+        <error id="nullPointer" severity="warning" msg="Possible null pointer dereference: p" verbose="Possible null pointer dereference: p" cwe="476">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="13" column="16" info="Null pointer dereference"/>
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="6" column="24" info="Assignment &apos;p=0&apos;, assigned value is 0"/>
+            <symbol>p</symbol>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="The expression &apos;counter == 0&apos; is always true." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="11" column="18"/>
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="7" column="18" info="&apos;counter&apos; is assigned value &apos;0&apos; here."/>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="17" column="36"/>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="19" column="67"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;number_i_dislike&apos; can be reduced." verbose="The scope of the variable &apos;number_i_dislike&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="4" column="9"/>
+            <symbol>number_i_dislike</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;a_dissolved_number&apos; can be reduced." verbose="The scope of the variable &apos;a_dissolved_number&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="5" column="9"/>
+            <symbol>a_dissolved_number</symbol>
+        </error>
+        <error id="zerodiv" severity="error" msg="Division by zero." verbose="Division by zero." cwe="369">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="19" column="47" info="Division by zero"/>
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="4" column="28" info="Assignment &apos;number_i_dislike=6&apos;, assigned value is 6"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;a_dissolved_number&apos; is assigned a value that is never used." verbose="Variable &apos;a_dissolved_number&apos; is assigned a value that is never used." cwe="563">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="5" column="28"/>
+            <symbol>a_dissolved_number</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;a_dissolved_number&apos; is assigned a value that is never used." verbose="Variable &apos;a_dissolved_number&apos; is assigned a value that is never used." cwe="563">
+            <location file0="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" file="C:\Users\LiTho\Documents\Program Analyis Homework\Eseg HW Programs\Program with Real Errors.c" line="19" column="28"/>
+            <symbol>a_dissolved_number</symbol>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="test_my_failures" lineNumber="2"/>
+    <functiondecl functionName="main" lineNumber="27"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="my_favorite_number"/>
+    <functioncall functionName="number_i_dislike"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="test_my_failures"/>
+    <functioncall functionName="while"/>
+  </FileInfo>
+</analyzerinfo>

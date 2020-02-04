@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.90"/>
+    <errors>
+        <error id="AssignmentAddressToInteger" severity="portability" msg="Assigning a pointer to an integer is not portable." verbose="Assigning a pointer to an integer (int/long/etc) is not portable across different platforms and compilers. For example in 32-bit Windows and linux they are same width, but in 64-bit Windows and linux they are of different width. In worst case you end up assigning 64-bit address to 32-bit integer. The safe way is to store addresses only in pointer types (or typedefs like uintptr_t)." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="9"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &amp;#039;my_favorite_number&amp;gt;7&amp;#039; is always false" verbose="Condition &amp;#039;my_favorite_number&amp;gt;7&amp;#039; is always false" sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="16" info="Condition &amp;#039;my_favorite_number&amp;gt;7&amp;#039; is always false"/>
+            <location file="Program with Real Errors.c" line="3" info="Assignment &amp;#039;my_favorite_number=5&amp;#039;, assigned value is 5"/>
+        </error>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: p" verbose="Null pointer dereference: p" sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="9" info="Null pointer dereference"/>
+            <location file="Program with Real Errors.c" line="6" info="Assignment &amp;#039;p=0&amp;#039;, assigned value is 0"/>
+        </error>
+        <error id="nullPointer" severity="warning" msg="Possible null pointer dereference: p" verbose="Possible null pointer dereference: p" sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="12" info="Null pointer dereference"/>
+            <location file="Program with Real Errors.c" line="6" info="Assignment &amp;#039;p=0&amp;#039;, assigned value is 0"/>
+        </error>
+        <error id="nullPointer" severity="warning" msg="Possible null pointer dereference: p" verbose="Possible null pointer dereference: p" sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="13" info="Null pointer dereference"/>
+            <location file="Program with Real Errors.c" line="6" info="Assignment &amp;#039;p=0&amp;#039;, assigned value is 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="The expression &amp;#039;counter == 0&amp;#039; is always true." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="11" info=""/>
+            <location file="Program with Real Errors.c" line="7" info="&amp;#039;counter&amp;#039; is assigned value &amp;#039;0&amp;#039; here."/>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &amp;#039;/&amp;#039;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="17"/>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &amp;#039;/&amp;#039;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="19"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;number_i_dislike&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;number_i_dislike&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="4"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;a_dissolved_number&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;a_dissolved_number&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="5"/>
+        </error>
+        <error id="zerodiv" severity="error" msg="Division by zero." verbose="Division by zero." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="19" info="Division by zero"/>
+            <location file="Program with Real Errors.c" line="4" info="Assignment &amp;#039;number_i_dislike=6&amp;#039;, assigned value is 6"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;a_dissolved_number&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;a_dissolved_number&amp;#039; is assigned a value that is never used." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="5"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;a_dissolved_number&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;a_dissolved_number&amp;#039; is assigned a value that is never used." sinceDate="2/3/2020">
+            <location file="Program with Real Errors.c" line="19"/>
+        </error>
+        <error id="AssignmentIntegerToAddress" severity="portability" msg="Assigning an integer to a pointer is not portable." verbose="Assigning an integer (int/long/etc) to a pointer is not portable across different platforms and compilers. For example in 32-bit Windows and linux they are same width, but in 64-bit Windows and linux they are of different width. In worst case you end up assigning 64-bit integer to 32-bit pointer. The safe way is to store addresses only in pointer types (or typedefs like uintptr_t)." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="5"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="warning" msg="%d in format string (no. 1) requires &amp;#039;int&amp;#039; but the argument type is &amp;#039;signed int *&amp;#039;." verbose="%d in format string (no. 1) requires &amp;#039;int&amp;#039; but the argument type is &amp;#039;signed int *&amp;#039;." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="7"/>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &amp;#039;/&amp;#039;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="5"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;a&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;a&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="3"/>
+        </error>
+        <error id="zerodiv" severity="error" msg="Division by zero." verbose="Division by zero." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="5"/>
+        </error>
+        <error id="uninitvar" severity="error" msg="Uninitialized variable: a" verbose="Uninitialized variable: a" sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="5"/>
+        </error>
+        <error id="uninitvar" severity="error" msg="Uninitialized variable: b" verbose="Uninitialized variable: b" sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="6"/>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &amp;#039;a&amp;#039; is not assigned a value." verbose="Variable &amp;#039;a&amp;#039; is not assigned a value." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="3"/>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &amp;#039;b&amp;#039; is not assigned a value." verbose="Variable &amp;#039;b&amp;#039; is not assigned a value." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="3"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;a&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;a&amp;#039; is assigned a value that is never used." sinceDate="2/3/2020">
+            <location file="Program with false alarms.c" line="18"/>
+        </error>
+    </errors>
+</results>
